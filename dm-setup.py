@@ -7,11 +7,17 @@ try:
   import sweetviz as sv
   import seaborn as sns
 except ImportError:
-  ! pip install sklearn
-  ! pip install pandas
-  ! pip install numpy
-  ! pip install sweetviz
-  ! pip install seaborn
+  userChoice = input("Found missing package, auto install? (yes/no):\n")
+  if userChoice.lower()=="yes":
+    ! pip install sklearn
+    ! pip install pandas
+    ! pip install numpy
+    ! pip install sweetviz
+    ! pip install seaborn
+   elif userChoice.lower() =="no":
+    print("exiting Datamind initial setup....")
+   else:
+    print("don't know what I have read. terminating.....BANG!")
 except Exception as error:
   print(error,False)
   print(error.__class__.__name__ + ": " + error.message)
